@@ -1,0 +1,123 @@
+unit RDWClient.View.Main;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
+  uDWJSONObject,
+  uDWConstsData,
+  Vcl.StdCtrls, uRESTDWServerEvents, uDWAbout, uRESTDWBase, Vcl.Imaging.jpeg,
+  Vcl.ExtCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls;
+
+type
+  TMainForm = class(TForm)
+    Panel2: TPanel;
+    Image1: TImage;
+    Panel1: TPanel;
+    Panel3: TPanel;
+    Label2: TLabel;
+    DBGrid1: TDBGrid;
+    DataSource: TDataSource;
+    Panel4: TPanel;
+    DBNavigator1: TDBNavigator;
+    ApplyButton: TButton;
+    OpenButton: TButton;
+    procedure OpenButtonClick(Sender: TObject);
+    procedure ApplyButtonClick(Sender: TObject);
+  private
+    procedure aShowmessage(const sText: String; sFontName: String;
+      iFontSize: Integer);
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  MainForm: TMainForm;
+
+implementation
+
+{$R *.dfm}
+
+uses DRWClient.Model.MainDataModule;
+
+procedure TMainForm.ApplyButtonClick(Sender: TObject);
+var
+  vError : String;
+begin
+
+    with MainDataModule do
+    begin
+      if RESTDWClientSQL_Employee.MassiveCount > 0 then
+        RESTDWClientSQL_Employee.ApplyUpdates(vError);
+    end;
+
+    if Trim(vError) <> '' then
+      ShowMessage(vError)
+    else
+      aShowmessage('Delphi ingá é só sucesso!','Calibri','20');
+
+end;
+
+procedure TMainForm.OpenButtonClick(Sender: TObject);
+begin
+
+    MainDataModule.RESTDWClientSQL_Employee.Active :=
+      not MainDataModule.RESTDWClientSQL_Employee.Active;
+
+    if MainDataModule.RESTDWClientSQL_Employee.Active then
+      OpenButton.Caption := 'Close'
+    else
+      OpenButton.Caption := 'Open';
+
+end;
+
+
+procedure TMainForm.aShowmessage(const sText: String;
+  sFontName: String = 'MS Sans Serif'; iFontSize: Integer = 8);
+var
+  oForm: TForm;
+begin
+  oForm := TForm.Create(Application);
+  oForm.BorderStyle := bsDialog;
+  oForm.Position := poScreenCenter;
+  oForm.BiDiMode := Application.MainForm.BiDiMode;
+  oForm.Font.Name := sFontName;
+  oForm.Font.Size := iFontSize;
+  oForm.Height := 100;
+  oForm.Width := 200;
+  oForm.Caption := Application.Title;
+
+  with TMemo.Create(oForm) do
+  begin
+    Parent := oForm;
+    Align := alTop;
+    Lines.Clear;
+    Lines.Add('');
+    Lines.Add(sText);
+    Alignment := taCenter;
+    ParentFont := True;
+    Color := oForm.Color;
+    BorderStyle := bsNone;
+    Top := 10;
+    Left := 100;
+    Width := oForm.Width - 130;
+    Readonly := True;
+  end;
+
+  with TButton.Create(oForm) do
+  begin
+    Parent := oForm;
+    Top := oForm.Height - (Height * 3) + 10;
+    Left := (oForm.Width - Width) div 2;
+    Caption := 'OK';
+    ModalResult := mrOk;
+    Taborder := 0;
+  end;
+
+  oForm.ShowModal;
+  oForm.Free;
+end;
+
+end.

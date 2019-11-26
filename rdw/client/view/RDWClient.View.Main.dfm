@@ -1,4 +1,4 @@
-object Form1: TForm1
+object MainForm: TMainForm
   Left = 0
   Top = 0
   Caption = 'RDW Client - Delphi Inga 8'
@@ -1297,7 +1297,7 @@ object Form1: TForm1
       Height = 72
       Align = alClient
       BevelOuter = bvNone
-      Caption = 'RDW Client Delphi Ing'#225' 8'
+      Caption = 'RDW Client - 8'#186' Delphi Ing'#225' 8'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -40
@@ -1337,11 +1337,17 @@ object Form1: TForm1
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 105
+    Top = 121
     Width = 628
-    Height = 248
+    Height = 232
     Align = alClient
     DataSource = DataSource
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -1353,7 +1359,7 @@ object Form1: TForm1
     Left = 0
     Top = 72
     Width = 628
-    Height = 33
+    Height = 49
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 3
@@ -1361,37 +1367,49 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 320
-      Height = 33
+      Height = 49
       DataSource = DataSource
       Align = alLeft
       TabOrder = 0
+      ExplicitHeight = 33
     end
     object ApplyButton: TButton
-      Left = 395
+      Left = 425
       Top = 0
-      Width = 94
-      Height = 33
+      Width = 192
+      Height = 49
       Align = alLeft
       Caption = 'Apply Updates'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -27
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 1
       OnClick = ApplyButtonClick
-      ExplicitLeft = 401
-      ExplicitTop = -6
     end
     object OpenButton: TButton
       Left = 320
       Top = 0
-      Width = 75
-      Height = 33
+      Width = 105
+      Height = 49
       Align = alLeft
       Caption = 'Open'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -27
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 2
       OnClick = OpenButtonClick
-      ExplicitLeft = 314
+      ExplicitLeft = 326
       ExplicitTop = -6
     end
   end
   object DataSource: TDataSource
+    DataSet = MainDataModule.RESTDWClientSQL_Employee
     Left = 288
     Top = 208
   end

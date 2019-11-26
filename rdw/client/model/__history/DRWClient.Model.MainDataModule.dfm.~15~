@@ -1,0 +1,116 @@
+object MainDataModule: TMainDataModule
+  OldCreateOrder = False
+  Height = 257
+  Width = 430
+  object RESTDWDataBase: TRESTDWDataBase
+    Active = False
+    Compression = True
+    CriptOptions.Use = False
+    CriptOptions.Key = 'RDWBASEKEY256'
+    Login = 'asa'
+    Password = 'asa'
+    Proxy = False
+    ProxyOptions.Port = 8888
+    PoolerService = '127.0.0.1'
+    PoolerPort = 8082
+    PoolerName = 'TMainDataModule.RESTDWPoolerDB'
+    StateConnection.AutoCheck = False
+    StateConnection.InTime = 1000
+    RequestTimeOut = 10000
+    EncodeStrings = True
+    Encoding = esUtf8
+    StrsTrim = False
+    StrsEmpty2Null = False
+    StrsTrim2Len = True
+    ParamCreate = True
+    FailOver = False
+    FailOverConnections = <>
+    FailOverReplaceDefaults = False
+    ClientConnectionDefs.Active = False
+    Left = 80
+    Top = 32
+  end
+  object RESTDWClientSQL_Employee: TRESTDWClientSQL
+    Active = False
+    Filtered = False
+    FieldDefs = <>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    StoreDefs = True
+    MasterCascadeDelete = True
+    BinaryRequest = False
+    Datapacks = -1
+    DataCache = False
+    Params = <>
+    DataBase = RESTDWDataBase
+    SQL.Strings = (
+      'SELECT * FROM EMPLOYEE')
+    UpdateTableName = 'EMPLOYEE'
+    CacheUpdateRecords = True
+    AutoCommitData = False
+    AutoRefreshAfterCommit = False
+    RaiseErrors = True
+    ActionCursor = crSQLWait
+    ReflectChanges = False
+    Left = 80
+    Top = 104
+    object RESTDWClientSQL_EmployeeEMP_NO: TSmallintField
+      FieldName = 'EMP_NO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object RESTDWClientSQL_EmployeeFIRST_NAME: TStringField
+      FieldName = 'FIRST_NAME'
+      Required = True
+      Size = 15
+    end
+    object RESTDWClientSQL_EmployeeLAST_NAME: TStringField
+      FieldName = 'LAST_NAME'
+      Required = True
+    end
+    object RESTDWClientSQL_EmployeePHONE_EXT: TStringField
+      FieldName = 'PHONE_EXT'
+      Size = 4
+    end
+    object RESTDWClientSQL_EmployeeHIRE_DATE: TSQLTimeStampField
+      FieldName = 'HIRE_DATE'
+      Required = True
+    end
+    object RESTDWClientSQL_EmployeeDEPT_NO: TStringField
+      FieldName = 'DEPT_NO'
+      Required = True
+      Size = 3
+    end
+    object RESTDWClientSQL_EmployeeJOB_CODE: TStringField
+      FieldName = 'JOB_CODE'
+      Required = True
+      Size = 5
+    end
+    object RESTDWClientSQL_EmployeeJOB_GRADE: TSmallintField
+      FieldName = 'JOB_GRADE'
+      Required = True
+    end
+    object RESTDWClientSQL_EmployeeJOB_COUNTRY: TStringField
+      FieldName = 'JOB_COUNTRY'
+      Required = True
+      Size = 15
+    end
+    object RESTDWClientSQL_EmployeeSALARY: TFloatField
+      FieldName = 'SALARY'
+      Required = True
+    end
+    object RESTDWClientSQL_EmployeeFULL_NAME: TStringField
+      FieldName = 'FULL_NAME'
+      Size = 37
+    end
+    object RESTDWClientSQL_EmployeeTIMEC: TTimeField
+      FieldName = 'TIMEC'
+    end
+  end
+end

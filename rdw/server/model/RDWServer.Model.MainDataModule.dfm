@@ -1,5 +1,6 @@
 object MainDataModule: TMainDataModule
   OldCreateOrder = False
+  Encoding = esASCII
   Height = 277
   Width = 455
   object FDConnection: TFDConnection
@@ -9,13 +10,13 @@ object MainDataModule: TMainDataModule
       'Database=D:\GitHub\RDWDelphiInga8\rdw\database\EMPLOYEE.FDB'
       'DriverID=FB')
     LoginPrompt = False
-    Left = 256
-    Top = 32
+    Left = 344
+    Top = 80
   end
   object RESTDWDriverFD: TRESTDWDriverFD
     CommitRecords = 100
     Connection = FDConnection
-    Left = 56
+    Left = 200
     Top = 80
   end
   object RESTDWPoolerDB: TRESTDWPoolerDB
@@ -28,16 +29,16 @@ object MainDataModule: TMainDataModule
     Active = True
     PoolerOffMessage = 'RESTPooler not active.'
     ParamCreate = True
-    Left = 56
-    Top = 24
+    Left = 64
+    Top = 80
   end
   object FDPhysFBDriverLink: TFDPhysFBDriverLink
-    Left = 256
-    Top = 72
+    Left = 344
+    Top = 136
   end
   object FDGUIxWaitCursor: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 256
-    Top = 120
+    Left = 344
+    Top = 192
   end
 end

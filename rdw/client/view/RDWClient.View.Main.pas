@@ -11,7 +11,7 @@ uses
   Vcl.ExtCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls;
 
 type
-  TForm1 = class(TForm)
+  TMainForm = class(TForm)
     Panel2: TPanel;
     Image1: TImage;
     Panel1: TPanel;
@@ -32,7 +32,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  MainForm: TMainForm;
 
 implementation
 
@@ -40,7 +40,7 @@ implementation
 
 uses DRWClient.Model.MainDataModule;
 
-procedure TForm1.ApplyButtonClick(Sender: TObject);
+procedure TMainForm.ApplyButtonClick(Sender: TObject);
 var
   vError : String;
 begin
@@ -54,11 +54,11 @@ begin
     if Trim(vError) <> '' then
       ShowMessage(vError)
     else
-      ShowMessage('Delphi ingá é só sucesso!');
+      Showmessage('Delphi ingá é só sucesso!');
 
 end;
 
-procedure TForm1.OpenButtonClick(Sender: TObject);
+procedure TMainForm.OpenButtonClick(Sender: TObject);
 begin
 
     MainDataModule.RESTDWClientSQL_Employee.Active :=

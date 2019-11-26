@@ -1,0 +1,13 @@
+object MainDataModule: TMainDataModule
+  OldCreateOrder = False
+  Height = 277
+  Width = 498
+  object FDConnection: TFDConnection
+    Params.Strings = (
+      'DriverID=FB'
+      'User_Name=sysdba'
+      'Password=masterkey')
+    Left = 48
+    Top = 24
+  end
+end

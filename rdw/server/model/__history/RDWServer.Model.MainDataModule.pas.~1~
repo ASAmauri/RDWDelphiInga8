@@ -1,0 +1,26 @@
+unit RDWServer.Model.MainDataModule;
+
+interface
+
+uses
+  System.SysUtils, System.Classes,
+  uDWDataModule;
+
+type
+  TMainDataModule = class(TServerMethodDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  MainDataModule: TMainDataModule;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

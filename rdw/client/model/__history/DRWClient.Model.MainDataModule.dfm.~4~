@@ -1,0 +1,33 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 257
+  Width = 430
+  object RESTDWDataBase: TRESTDWDataBase
+    Active = False
+    Compression = True
+    CriptOptions.Use = False
+    CriptOptions.Key = 'RDWBASEKEY256'
+    Login = 'asa'
+    Password = 'asa'
+    Proxy = False
+    ProxyOptions.Port = 8888
+    PoolerService = '127.0.0.1'
+    PoolerPort = 8082
+    PoolerName = 'TMainDataModule.RESTDWPoolerDB'
+    StateConnection.AutoCheck = False
+    StateConnection.InTime = 1000
+    RequestTimeOut = 10000
+    EncodeStrings = True
+    Encoding = esUtf8
+    StrsTrim = False
+    StrsEmpty2Null = False
+    StrsTrim2Len = True
+    ParamCreate = True
+    FailOver = False
+    FailOverConnections = <>
+    FailOverReplaceDefaults = False
+    ClientConnectionDefs.Active = False
+    Left = 56
+    Top = 32
+  end
+end

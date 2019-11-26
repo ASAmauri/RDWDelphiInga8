@@ -1,0 +1,16 @@
+program RDWServer;
+
+uses
+  Vcl.Forms,
+  RDWServer.View.Main in '..\view\RDWServer.View.Main.pas' {Form1},
+  RDWServer.Model.MainDataModule in '..\model\RDWServer.Model.MainDataModule.pas' {MainDataModule: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TMainDataModule, MainDataModule);
+  Application.Run;
+end.

@@ -27,8 +27,8 @@ object MainDataModule: TMainDataModule
     FailOverConnections = <>
     FailOverReplaceDefaults = False
     ClientConnectionDefs.Active = False
-    Left = 192
-    Top = 56
+    Left = 88
+    Top = 40
   end
   object RESTDWClientSQL_Employee: TRESTDWClientSQL
     Active = False
@@ -58,8 +58,8 @@ object MainDataModule: TMainDataModule
     RaiseErrors = True
     ActionCursor = crSQLWait
     ReflectChanges = False
-    Left = 192
-    Top = 136
+    Left = 96
+    Top = 96
     object RESTDWClientSQL_EmployeeEMP_NO: TSmallintField
       FieldName = 'EMP_NO'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]

@@ -1371,7 +1371,6 @@ object MainForm: TMainForm
       DataSource = DataSource
       Align = alLeft
       TabOrder = 0
-      ExplicitHeight = 33
     end
     object ApplyButton: TButton
       Left = 425
@@ -1404,8 +1403,6 @@ object MainForm: TMainForm
       ParentFont = False
       TabOrder = 2
       OnClick = OpenButtonClick
-      ExplicitLeft = 326
-      ExplicitTop = -6
     end
   end
   object DataSource: TDataSource
